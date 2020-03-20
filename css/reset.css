@@ -1,0 +1,29 @@
+.mt105 {margin-top: 105px;}
+.m40 {margin: 40px;}
+.popup>.popup-inner>.popup-header,
+.popup-inner img,
+.popup>.popup-inner>div>div
+{margin: 40px;}
+.small-squares>div>a{
+    position: absolute;
+    bottom: 6px;
+    left: 0%;
+    z-index: 10;
+    background: #eee;
+    width: 100%;
+    height: 20%;
+    text-align: center;
+    line-height: 40px;
+    opacity: 0.5;
+    
+}
+.small-squares>div>a:hover{
+    opacity: 0.8;
+}
+.small-squares>div{
+ position: relative;
+}
+
+a{
+    text-decoration: none;
+}
