@@ -9,6 +9,7 @@ import { Table, TableHead, TableRow, TableCell, TableBody, Paper } from '@materi
 // import TableCell from "@material-ui/core/TableCell"
 // import TableBody from "@material-ui/core/TableBody"
 import{withStyles} from "@material-ui/core/styles"
+
 const styles = theme =>({
   root: {
     width:"100%",
@@ -19,25 +20,24 @@ const styles = theme =>({
     minWidth:1080
   }
 })
-const customers = [{
-  "id": 1,
-  "name": "홍길동",
-  "gender": "남",
-  "img": "https://placeimg.com/64/64/1"
-},
-{
-  "id": 2,
-  "name": "이무기",
-  "gender": "남",
-  "img": "https://placeimg.com/64/64/2"
-},
-{
-  "id": 3,
-  "name": "홍여령",
-  "gender": "여",
-  "img": "https://placeimg.com/64/64/3"
-}]
+
+
 class App extends Component {
+
+  state = {
+    customers : ""
+  }
+
+  componentDidMount(){           //컴포런트 완료후
+    this.callApi()
+      .then(res => this.setState({customers:res}))
+      .catch(err => console.log(err))
+  }
+  callApi = async () =>{
+    const response = await fetch("/api/customers")
+    const body = await response.json()
+    return body
+  }
   render() {
     const {classes} =this.props
     return (
@@ -46,15 +46,15 @@ class App extends Component {
           <TableHead>
             <TableRow>
               <TableCell>번호</TableCell>
-              <TableCell>번호</TableCell>
               <TableCell>이미지</TableCell>
               <TableCell>이름</TableCell>
               <TableCell>성별</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {customers.map(c => { return (<Customer key={c.id} id={c.id} name={c.name} gender={c.gender} img={c.img}></Customer>) })
-            }
+            {this.state.customers ? this.state.customers.map(c => {
+               return (<Customer key={c.id} id={c.id} name={c.name} gender={c.gender} img={c.img}></Customer>) })
+            :console.log("not find this.state.custmers")}
           </TableBody>
         </Table>
         </Paper>
