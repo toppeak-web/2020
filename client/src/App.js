@@ -62,7 +62,7 @@ class App extends Component {
           </TableHead>
           <TableBody>
             {this.state.customers ? this.state.customers.map(c => {
-               return (<Customer key={c.id} id={c.id} name={c.name} gender={c.gender} img={c.img}></Customer>) })
+               return (<Customer key={c.id} id={c.id} img={c.img} name={c.name} gender={c.gender}/>) })
             : <TableRow>
                 <TableCell colSpan="6" align="center">
                     <CircularProgress className={classes.progress} variant="determinate" value={this.state.completed}/>
