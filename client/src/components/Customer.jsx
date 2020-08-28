@@ -4,14 +4,14 @@ import {TableCell,TableRow} from "@material-ui/core/"
 class Customer extends React.Component{
     render(){
         return(
-            <div>
                 <TableRow>
-                    <TableCell>{this.props.id}</TableCell>
-                    <TableCell><img src={this.props.img} alt="profile" style={{width:64, height:64}}/></TableCell>
-                    <TableCell>{this.props.name}</TableCell>
-                    <TableCell>{this.props.gender}</TableCell>
+                <TableCell>{this.props.id}</TableCell>
+                <TableCell><img src={this.props.image} alt="profile" style={{width:64, height:64}}/></TableCell>
+                <TableCell>{this.props.name}</TableCell>
+                <TableCell>{this.props.birthday}</TableCell>
+                <TableCell>{this.props.gender}</TableCell>
+                <TableCell>{this.props.job}</TableCell>
                 </TableRow>
-            </div>
         )
     }
 }
@@ -19,7 +19,7 @@ class CustomerProfile extends React.Component{
     render(){
         return(
             <div>
-                <img src={this.props.img} alt={this.props.id}/>
+                <img src={this.props.image} alt={this.props.id}/>
             </div>
         )
     }

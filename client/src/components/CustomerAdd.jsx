@@ -1,73 +1,80 @@
-// 고객 추가 양식
-import React from "react";
-import {post} from "axios"
+import React from 'react';
+import { post } from 'axios';
 
+class CustomerAdd extends React.Component {
 
-class CustmerAdd extends React.Component{
-
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
-            file : null,   //변수값초기화
-            userName : "",
-            gender : "",
-            fileName: ""
+            file: null,
+            userName: '',
+            birthday: '',
+            gender: '',
+            job: '',
+            fileName: ''
         }
     }
 
-    handleFormSubmit = (e) =>{
+    handleFormSubmit = (e) => {
         e.preventDefault()
         this.addCustomer()
-            .then((response) =>{
+            .then((response) => {
                 console.log(response.data);
                 this.props.stateRefresh();
             })
         this.setState({
             file: null,
-            userName: "",
-            gender: "",
-            fileName: ""
+            userName: '',
+            birthday: '',
+            gender: '',
+            job: '',
+            fileName: ''
         })
-        
     }
 
-    handleFileCH = (e) =>{
+    handleFileChange = (e) => {
         this.setState({
             file: e.target.files[0],
             fileName: e.target.value
         })
     }
-    handleValueCH = (e) =>{
+
+    handleValueChange = (e) => {
         let nextState = {};
         nextState[e.target.name] = e.target.value;
-        this.setState(nextState)
+        this.setState(nextState);
     }
 
-    addCustomer = () =>{
-        const url = "/api/customers";
+    addCustomer = () => {
+        const url = '/api/customers';
         const formData = new FormData();
-        formData.append("img", this.state.file);
-        formData.append("name", this.state.userName);
-        formData.append("gender", this.state.gender);
+        formData.append('image', this.state.file);
+        formData.append('name', this.state.userName);
+        formData.append('birthday', this.state.birthday);
+        formData.append('gender', this.state.gender);
+        formData.append('job', this.state.job);
         const config = {
-            headers : {
-                "content-type" : "multipart/form-data"
+            headers: {
+                'content-type': 'multipart/form-data'
             }
         }
-        return post(url, formData, config)
+        return post(url, formData, config);
     }
-    
-    render(){
-        return(
+
+    render() {
+        return (
             <form onSubmit={this.handleFormSubmit}>
-                <h1>고객추가</h1>
-                프로필 이미지; <input type="file" name="file" file={this.state.file} value={this.state.fileName} onChange={this.handleFileCH}/> <br/>
-                이름: <input type="text" name="userName" value={this.state.userName} onChange={this.handleValueCH}/><br/>
-                성별: <input type="text" name="gender" value={this.state.gender} onChange={this.handleValueCH}/><br/>
+                <h1>고객 추가</h1>
+                프로필 이미지: <input type="file" name="file" file={this.state.file} value={this.state.fileName} onChange={this.handleFileChange}/><br/>
+                이름: <input type="text" name="userName" value={this.state.userName} onChange={this.handleValueChange}/><br/>
+                생년월일: <input type="text" name="birthday" value={this.state.birthday} onChange={this.handleValueChange}/><br/>
+                성별: <input type="text" name="gender" value={this.state.gender} onChange={this.handleValueChange}/><br/>
+                직업: <input type="text" name="job" value={this.state.job} onChange={this.handleValueChange}/><br/>
                 <button type="submit">추가하기</button>
             </form>
         )
     }
+
 }
 
-export default CustmerAdd;
+export default CustomerAdd;
