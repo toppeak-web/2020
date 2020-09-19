@@ -9,3 +9,4 @@ React와 node.js로 만들고 서버는 aws, mysql테이터를 가지고 만든 
 # 고객 추가하기
 <img width= "500" src="https://user-images.githubusercontent.com/60978437/93632831-f4bec400-fa28-11ea-9495-3eda877abd0a.gif">
 
+<img width= "500" src="https://user-images.githubusercontent.com/60978437/93665908-14033300-fab5-11ea-879e-3f314089a882.png">
