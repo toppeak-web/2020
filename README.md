@@ -2,6 +2,7 @@
 
 https://toppeak-web.github.io/Codeing-Challenges-Javascript/.
 
+<img src="https://user-images.githubusercontent.com/60978437/93762460-92450e00-fc4a-11ea-88ae-5045c464cb75.png">
 
 <!--
 <img src="https://user-images.githubusercontent.com/60978437/93755199-d978d200-fc3d-11ea-84df-c9be3f382abc.png">
