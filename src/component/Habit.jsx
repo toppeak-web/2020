@@ -2,29 +2,30 @@ import React, { Component } from 'react';
 import '@fortawesome/fontawesome-free/js/all.js';
 
 class Habit extends Component {
-    state = {
-        count: 0
-    }
 
     handleIncrement = () =>{
-        this.setState({count: this.state.count+1})
+        this.props.onIncrement(this.props.ptato)
     }
-    handledecrement = () =>{
-        const count = this.state.count - 1
-        this.setState({count: count < 0 ? 0 : count })
+    handleDecrement = () =>{
+        this.props.onDecrement(this.props.ptato)
     }
+    handleDelete = () =>{
+        this.props.onDelete(this.props.ptato)
+    }
+    
     render() {
+        const { name , count} = this.props.ptato
         return (
             <li className="habit">
-                <span className="habit-name"></span>
-        <span className="habit-count">{this.state.count}</span>
+                <span className="habit-name">{name}</span>
+                <span className="habit-count">{count}</span>
                 <button className="habit-button habit-plus" onClick={this.handleIncrement}>
                     <i className="fas fa-plus-circle"></i>
                 </button>
-                <button className="habit-button habit-minus" onClick={this.handledecrement}>
+                <button className="habit-button habit-minus" onClick={this.handleDecrement}>
                     <i className="fas fa-minus-circle"></i>
                 </button>
-                <button className="habit-button habit-delete">
+                <button className="habit-button habit-delete" onClick={this.handleDelete}>
                     <i className="fas fa-ban"></i>
                 </button>
             </li>

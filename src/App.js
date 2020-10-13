@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import Habit from './component/Habit';
+import Habits from './component/Habits';
 
 function App() {
   return (
     <div className="App">
-      <Habit/>
+      <Habits/>
     </div>
   );
 }
