@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Habit from './Habit';
+import HabitAddForm from './HabitAddForm';
 
 class Habits extends Component {
     
@@ -14,8 +15,15 @@ class Habits extends Component {
     handleDelete = habit => {
         this.props.onDelete(habit)
     }
+
+    handleAdd = name => {
+        this.props.onAdd(name)
+      }
+      
     render() {
         return (
+            <>
+            <HabitAddForm onAdd={this.handleAdd} />
            <ul>
                {this.props.tomato.map(habita=>(
                    <Habit
@@ -26,6 +34,7 @@ class Habits extends Component {
                     onDelete={this.handleDelete}/>
                    ))}
            </ul>
+           </>
         );
     }
 }
