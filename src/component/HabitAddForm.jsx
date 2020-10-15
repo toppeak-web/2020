@@ -18,8 +18,9 @@ class HabitAddForm extends Component {
         name && this.props.onAdd(name)
         this.inputRef.current.value = "";
     }
+   
     render() {
-        const classes = this.props
+        // const classes = this.props
         return (
                 <form className="add-form" onSubmit={this.onSubmit}>
                     <input
@@ -28,9 +29,13 @@ class HabitAddForm extends Component {
                         className="add-input"
                         placeholder="Habit" 
                     />
-                    <Button variant="outlined" color="primary" href="#outlined-buttons">
+                    
+                    <Button variant="outlined" color="primary" href="#outlined-buttons"
+                    onClick={this.onSubmit}
+                    >
                         add
                     </Button>
+                   
                 </form>
         );
     }
