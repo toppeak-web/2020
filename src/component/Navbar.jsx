@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -17,7 +17,7 @@ const useStyles = theme => ({
   },
 });
 
-class Navbar extends Component {
+class Navbar extends PureComponent {
     render() {
         const classes = this.props;
         return (

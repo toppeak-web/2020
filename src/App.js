@@ -15,22 +15,32 @@ class App extends Component {
   }
 
 
-  handleIncrement = habit => {
-    // this.setState({count: this.state.count+1})
-    const habits = [...this.state.habits]
-    const index = habits.indexOf(habit) //this 배열의 순서
-    const count = habits[index].count++;  //해당 순서 index에 맞는 카운트를 1증가 시킨다
+  handleIncrement = habit => { // habit 업데이트 해야하는
+    const habits = this.state.habits.map(i => {
+      if(i.id === habit.id){
+        return {...habit, count: habit.count + 1} //모두 복사하고 새로운 오브젝트에복사해서 count를 덮어쓴다
+      } else{
+        return i;
+      }
+    })
     this.setState({ habits })
-    console.log(count)
   }
 
   handleDecrement = habit => {
-    const habits = [...this.state.habits]
-    const index = habits.indexOf(habit)
-    const count = habits[index].count - 1
-    habits[index].count = count < 0 ? 0 : count
+    const habits = this.state.habits.map(i => {
+      if(i.id === habit.id){
+        return {...habit, count: habit.count - 1}
+      } else{
+        return i;
+      }
+    })
     this.setState({ habits })
-    console.log(count)
+    // const habits = [...this.state.habits]
+    // const index = habits.indexOf(habit)
+    // const count = habits[index].count - 1
+    // habits[index].count = count < 0 ? 0 : count
+    // this.setState({ habits })
+    // console.log(count)
   }
 
   handleDelete = habit => {
@@ -45,8 +55,10 @@ class App extends Component {
   }
   handleReset = () =>{
     const habits = this.state.habits.map(i=>{
-      i.count = 0
-      return i;
+      if(i.count !== 0){  //0이 아니라면 0으로바꾼다
+        return {...i, count: 0}
+      }
+      return i; //0이면 그냥 돌려보네
     })
     this.setState({ habits })
   }

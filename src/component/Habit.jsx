@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import '@fortawesome/fontawesome-free/js/all.js';
 
-class Habit extends Component {
+class Habit extends PureComponent {
 
     handleIncrement = () =>{
         this.props.onIncrement(this.props.ptato)
