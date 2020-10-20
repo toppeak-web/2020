@@ -19,6 +19,7 @@ const useStyles = theme => ({
 
 class Navbar extends PureComponent {
     render() {
+      console.log("navbar")
         const classes = this.props;
         return (
             <div className={classes.root}>
