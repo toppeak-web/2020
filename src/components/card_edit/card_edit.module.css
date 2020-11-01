@@ -33,3 +33,15 @@
 .textarea{
     flex-basis: 100%;
 }
+.del_button{
+    background-color: forestgreen;
+    color: #ddd;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0.5em;
+    flex: 1 1 50%;
+    font-size: 0.8rem;
+}
+.del_button:hover{
+    opacity: 0.8;
+}

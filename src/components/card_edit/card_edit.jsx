@@ -25,8 +25,9 @@ const CardEdit = ({ card }) => {
           <input className={styles.input} type="text" name="email" value={email}/>
           <textarea name="message" value={message}/>
           {/* button */}
-          <button className={styles.button}>
-              {name}
+          <button>image</button>
+          <button name="delete" className={styles.del_button}>
+              delete
           </button>
       </form>
   )
