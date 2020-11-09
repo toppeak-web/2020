@@ -9,18 +9,28 @@ import styles from "./maker.module.css";
 const Maker = ({ authService, FileInput, cardRepository }) => {
   const historyState = useHistory().state;
   const [cards, setCards] = useState({});
-  const [userId, setUseId] = useState(historyState &&historyState.id);
+  const [userId, setUseId] = useState(historyState && historyState.id);
 
   const history = useHistory();
   const onLogout = () => {
     authService.logout();
   };
+  useEffect(() => {
+    if (!userId) {
+      return;
+    }
+    const stopSync = cardRepository.syncCards(userId, (cards) => {
+      setCards(cards);
+    });
+    return () => stopSync();
+  }, [userId]);
 
   useEffect(() => {
+    //login
     authService.onAuthChange((user) => {
       if (user) {
-        setUseId(user.uid)
-      }else{
+        setUseId(user.uid);
+      } else {
         history.push("/");
       }
     });
@@ -32,7 +42,7 @@ const Maker = ({ authService, FileInput, cardRepository }) => {
       updated[card.id] = card;
       return updated;
     });
-    cardRepository.saveCard(userId, card)
+    cardRepository.saveCard(userId, card);
   };
 
   const deleteCard = (card) => {
@@ -41,7 +51,7 @@ const Maker = ({ authService, FileInput, cardRepository }) => {
       delete updated[card.id];
       return updated;
     });
-    cardRepository.delCard(userId, card)
+    cardRepository.delCard(userId, card);
   };
 
   return (
