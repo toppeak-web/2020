@@ -12,7 +12,7 @@
 
 ####저렁게 add된 내용은 firebase Realtime Database에 저장됩니다.
 
-### Realtime Database ![image](https://user-images.githubusercontent.com/60978437/99553044-0872b080-2a01-11eb-80c7-060812ac30dd.png)
+### Realtime Database![image](https://user-images.githubusercontent.com/60978437/99553044-0872b080-2a01-11eb-80c7-060812ac30dd.png)
 
 
 
