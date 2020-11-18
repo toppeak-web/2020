@@ -12,7 +12,7 @@ class CardRepository{
         firebaseApp.database().ref(`${userId}/cards/${card.id}`).set(card)
     }
     delCard(userId, card){
-        firebaseApp.database().ref(`${userId}/cards/${card.id}`).remove(card)
+        firebaseApp.database().ref(`${userId}/cards/${card.id}`).remove()
     }
 }
 
