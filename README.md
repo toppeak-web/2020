@@ -1,7 +1,7 @@
 ## 배포 https://businees-card-maker.web.app/
 #### 사용 기술 [React](https://reactjs.org/), [firebase](https://firebase.google.com/), [postcss](https://postcss.org/), react router, [Cloudinary](https://cloudinary.com/) 등
 
-### 해당 웹은 계정에따라 자신등록하여 명함카드를 만들 수 있는 서비스입니다.
+### 해당 웹은 계정에따라 자신을 등록하여 명함카드를 만들 수 있는 서비스입니다.
 
 #### 로그인 화면 
 <img src=https://user-images.githubusercontent.com/60978437/99552563-7c608900-2a00-11eb-99c7-b569305fac5f.png>
