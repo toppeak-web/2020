@@ -11,7 +11,7 @@
 
 <img src=https://user-images.githubusercontent.com/60978437/99552424-576c1600-2a00-11eb-946e-eb35edae8f66.png width=80%>
 
-#### 화면과 같이 왼쪽에 만들고싶은 정보를 넣고 add를 누르시면 오른쪽에 카드가 만들어집니다. <img src=https://user-images.githubusercontent.com/60978437/99552728-b03bae80-2a00-11eb-9c2b-b8eb4fb0b4dc.gif width=50% align=letf> <img src=https://user-images.githubusercontent.com/60978437/99552599-88e4e180-2a00-11eb-9660-98f77f625ae1.png width=50%>
+#### 화면과 같이 왼쪽에 만들고싶은 정보를 넣고 add를 누르시면 오른쪽에 카드가 만들어집니다. <img src=https://user-images.githubusercontent.com/60978437/99552728-b03bae80-2a00-11eb-9c2b-b8eb4fb0b4dc.gif width=49% align=letf> <img src=https://user-images.githubusercontent.com/60978437/99552599-88e4e180-2a00-11eb-9660-98f77f625ae1.png width=49%>
 
 #### 저렇게 add된 내용은 firebase Realtime Database에 저장됩니다.
 
