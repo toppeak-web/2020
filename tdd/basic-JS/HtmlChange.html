@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test0</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+        <style>
+            h2{background: #eeeeee;}
+        </style>
+</head>
+
+<body>
+    <h1 id="op">안녕하세요 밑에 글자를 hover할시 글자가 바뀝니다.</h1>
+    <h2 id="hover">마우스를 올려주세요</h2>
+
+</body>
+
+</html>
+
+<script>
+    const over = document.getElementById("hover")
+    $(function () {
+        $("h2").hover(function () {
+            over.innerHTML = "마우스 올림";
+        },$(this).mouseout(function(){
+            over.innerHTML = "마우스 나감"
+        }));
+    });
+    over.style.color = "red"
+    document.querySelector("#op").style.color = "blue"
+    console.dir(document)
+    document.title = "hi";
+
+
+</script>
